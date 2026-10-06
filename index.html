@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baral Photo Studio — photography services in Kahunkhola Chowk, Pokhara.">
+  <title>Baral Photo Studio | Pokhara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0b0d;--card:#151518;--text:#f6f3ee;--muted:#aaa6a0;--line:#29292d;--accent:#d7ad72}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(11,11,13,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:"Playfair Display",serif;font-size:1.25rem}
+    .brand span{color:var(--accent)}
+    .links{display:flex;gap:26px;font-size:.92rem;color:#d5d2cc}
+    .links a:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+    .hero{min-height:100vh;display:grid;place-items:center;position:relative;overflow:hidden;
+      background:radial-gradient(circle at 80% 20%,rgba(215,173,114,.16),transparent 30%),
+                 radial-gradient(circle at 20% 80%,rgba(255,255,255,.06),transparent 28%),
+                 linear-gradient(135deg,#0b0b0d 0%,#171419 55%,#0b0b0d 100%)}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),transparent 70%);pointer-events:none}
+    .hero-content{position:relative;z-index:2;padding-top:72px;max-width:760px}
+    .eyebrow{color:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;font-weight:700;margin-bottom:18px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(3.2rem,8vw,6.5rem);line-height:.98;max-width:850px}
+    h1 em{font-style:normal;color:var(--accent)}
+    .hero p{max-width:620px;color:#c4c0ba;font-size:1.08rem;margin:26px 0 32px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:13px 20px;border-radius:999px;border:1px solid var(--line);font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+    .btn.primary{background:var(--accent);color:#15110c;border-color:var(--accent)}
+    .btn:hover{transform:translateY(-2px)}
+    section{padding:95px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+    .section-head h2{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3.3rem)}
+    .section-head p{color:var(--muted);max-width:520px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;min-height:220px}
+    .icon{font-size:1.7rem;margin-bottom:20px}
+    .card h3{font-family:"Playfair Display",serif;font-size:1.5rem;margin-bottom:9px}
+    .card p{color:var(--muted)}
+    .portfolio{grid-template-columns:repeat(3,1fr)}
+    .shot{height:330px;border-radius:22px;overflow:hidden;position:relative;background:
+      linear-gradient(145deg,rgba(215,173,114,.32),transparent 45%),
+      linear-gradient(35deg,#242126,#6c5b4d 55%,#1a191d)}
+    .shot:nth-child(2){background:linear-gradient(145deg,#17181d,#66585d 45%,#b59a7e)}
+    .shot:nth-child(3){background:linear-gradient(145deg,#29211c,#8b6d51 50%,#17181a)}
+    .shot:nth-child(4){background:linear-gradient(145deg,#17191c,#4d5961 52%,#b6a082)}
+    .shot:nth-child(5){background:linear-gradient(145deg,#2b1f25,#866d78 48%,#171719)}
+    .shot:nth-child(6){background:linear-gradient(145deg,#111315,#5d594c 50%,#b38e68)}
+    .shot span{position:absolute;left:18px;bottom:18px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;font-size:.82rem}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .about-box{min-height:430px;border-radius:28px;background:
+      radial-gradient(circle at 70% 20%,rgba(215,173,114,.35),transparent 24%),
+      linear-gradient(145deg,#18171b,#40362f 50%,#111214);border:1px solid var(--line);display:grid;place-items:center}
+    .camera{font-size:7rem;filter:grayscale(1);opacity:.8}
+    .about h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin-bottom:20px}
+    .about p{color:var(--muted);margin-bottom:16px}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+    .fact{padding:16px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+    .fact b{display:block;color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact-card{padding:32px;background:var(--card);border:1px solid var(--line);border-radius:24px}
+    .contact-card h3{font-family:"Playfair Display",serif;font-size:1.8rem;margin-bottom:18px}
+    .contact-row{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}
+    .contact-row:last-child{border-bottom:0}
+    .contact-row small{color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+    .footerin{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:760px){
+      .links{display:none}.menu{display:block}.links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#0b0b0d;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}
+      .grid,.portfolio{grid-template-columns:1fr}.about,.contact{grid-template-columns:1fr}.about-box{min-height:300px}
+      section{padding:72px 0}.section-head{display:block}.section-head p{margin-top:12px}.footerin{display:block}.footerin p{margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container navin">
+    <a class="brand" href="#home">Baral <span>Photo Studio</span></a>
+    <button class="menu" onclick="document.querySelector('.links').classList.toggle('open')" aria-label="Menu">☰</button>
+    <div class="links">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-content">
+    <div class="eyebrow">Photography • Pokhara</div>
+    <h1>Moments worth<br><em>remembering.</em></h1>
+    <p>Professional photography for portraits, celebrations, events, and the moments you want to keep forever.</p>
+    <div class="buttons">
+      <a class="btn primary" href="tel:+9779846047524">Call the Studio →</a>
+      <a class="btn" href="https://maps.app.goo.gl/mbmZU5sESBKDFoqr6" target="_blank" rel="noopener">Get Directions ↗</a>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>What we do</h2>
+      <p>Photography built around natural moments, clean composition, and memories that feel as good years later as they did on the day.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="icon">◉</div><h3>Portraits</h3><p>Individual and family portraits with a polished, natural look.</p></article>
+      <article class="card"><div class="icon">✦</div><h3>Events</h3><p>Thoughtful coverage of celebrations, ceremonies, and important occasions.</p></article>
+      <article class="card"><div class="icon">▣</div><h3>Photo Services</h3><p>Professional studio photography for personal and practical needs.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <p>A visual showcase section ready for the studio's real photographs. Replace these placeholders with your best images.</p>
+    </div>
+    <div class="grid portfolio">
+      <div class="shot"><span>Portrait</span></div><div class="shot"><span>Couple</span></div><div class="shot"><span>Celebration</span></div>
+      <div class="shot"><span>Family</span></div><div class="shot"><span>Event</span></div><div class="shot"><span>Studio</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about">
+    <div class="about-box"><div class="camera">◉</div></div>
+    <div>
+      <div class="eyebrow">About the studio</div>
+      <h2>Your moments, beautifully framed.</h2>
+      <p>Baral Photo Studio is a local photography service in Pokhara, focused on helping people preserve meaningful moments through photography.</p>
+      <p>Visit the studio in Kahunkhola Chowk or call ahead to discuss your photography needs.</p>
+      <div class="facts">
+        <div class="fact"><b>Location</b>Kahunkhola Chowk, Pokhara</div>
+        <div class="fact"><b>Hours</b>7:00 AM – 7:00 PM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head"><h2>Let's create something memorable.</h2><p>Call the studio or use the map to find the location.</p></div>
+    <div class="contact">
+      <div class="contact-card">
+        <h3>Studio details</h3>
+        <div class="contact-row"><small>Phone</small><a href="tel:+9779846047524">+977 9846047524</a></div>
+        <div class="contact-row"><small>Address</small><span>Kahunkhola Chowk, Pokhara</span></div>
+        <div class="contact-row"><small>Hours</small><span>Daily · 7:00 AM – 7:00 PM</span></div>
+      </div>
+      <div class="contact-card">
+        <h3>Find us</h3>
+        <p style="color:var(--muted);margin-bottom:22px">Open the exact Google Maps location shared for the studio.</p>
+        <a class="btn primary" href="https://maps.app.goo.gl/mbmZU5sESBKDFoqr6" target="_blank" rel="noopener">Open Google Maps ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footerin">
+    <div>© <span id="year"></span> Baral Photo Studio</div>
+    <p>Photography in Pokhara, Nepal</p>
+  </div>
+</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll(".links a").forEach(a => a.addEventListener("click",()=>document.querySelector(".links").classList.remove("open")));
+</script>
+</body>
+</html>
